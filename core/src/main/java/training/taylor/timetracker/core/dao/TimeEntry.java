@@ -1,3 +1,4 @@
+@SuppressWarnings("checkstyle")
 package training.taylor.timetracker.core.dao;
 
 import org.springframework.context.annotation.Scope;
@@ -39,10 +40,10 @@ public class TimeEntry {
 
     @Override
     public String toString() {
-        return "TimeEntry{" +
-                "description='" + description + '\'' +
-                ", rate=" + rate +
-                ", time=" + time +
-                '}';
+        return "TimeEntry{\n" 
+                "description='" + description + '\'\n' +
+                ", rate=" + rate + "\n" +
+                ", time=" + time + "\n" +
+                '}\n';
     }
 }
