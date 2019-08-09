@@ -3,11 +3,11 @@ node {
       git 'https://github.com/lepffm/time-tracker.git'
    }
    stage('Build') {
-       sh 'mvn clean test findbugs:findbugs checkstyle:checkstyle pmd:pmd -q'
+       sh 'mvn clean test findbugs:findbugs checkstyle:checkstyle pmd:pmd -q -Dorg.slf4j.simpleLogger.defaultLogLevel=warn'
        checkstyle pattern: '**/target/checkstyle-result.xml'
        pmd canRunOnFailed: true, pattern: '**/target/pmd.xml'
        findbugs pattern: '**/core/target/findbugsXml.xml'
-       junit 'core/target/surefire-reports/Test*.xml'
+       junit 'core/target/surefire-reports/*.xml'
    }
    stage('Results') {
       //archiveArtifacts '**/target/*.jar,**/target/*.war'
