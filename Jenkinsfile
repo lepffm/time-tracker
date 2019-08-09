@@ -4,10 +4,10 @@ node {
    }
    stage('Build') {
        sh 'mvn clean package findbugs:findbugs checkstyle:checkstyle pmd:pmd -q -Dmaven.test.failure.ignore=true'
+       junit 'core/target/surefire-reports/*.xml'
        checkstyle pattern: '**/target/checkstyle-result.xml'
        pmd canRunOnFailed: true, pattern: '**/target/pmd.xml'
        findbugs pattern: '**/core/target/findbugsXml.xml'
-       junit 'core/target/surefire-reports/*.xml'
    }
    stage('Results') {
       //archiveArtifacts '**/target/*.jar,**/target/*.war'
