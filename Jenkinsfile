@@ -7,7 +7,7 @@ node {
        checkstyle pattern: '**/target/checkstyle-result.xml'
        pmd canRunOnFailed: true, pattern: '**/target/pmd.xml'
        findbugs pattern: '**/core/target/findbugsXml.xml'
-       junit '**/target/**/Test*.xml'
+       junit 'core/target/surefire-reports/Test*.xml'
    }
    stage('Results') {
       //archiveArtifacts '**/target/*.jar,**/target/*.war'
