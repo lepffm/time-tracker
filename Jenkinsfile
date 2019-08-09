@@ -3,7 +3,7 @@ node {
       git 'https://github.com/lepffm/time-tracker.git'
    }
    stage('Build') {
-       sh 'mvn clean package findbugs:findbugs checkstyle:checkstyle pmd:pmd -q -Dmaven.test.failure.ignore=false'
+       sh 'mvn clean package findbugs:findbugs checkstyle:checkstyle pmd:pmd -q -Dmaven.test.failure.ignore=true'
        checkstyle pattern: '**/target/checkstyle-result.xml'
        pmd canRunOnFailed: true, pattern: '**/target/pmd.xml'
        findbugs pattern: '**/core/target/findbugsXml.xml'
