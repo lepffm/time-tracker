@@ -10,7 +10,7 @@ node {
        junit '**/target/**/*.xml'
    }
    stage('Results') {
-      archiveArtifacts '**/target/*.jar,**/target/*.war'
+      //archiveArtifacts '**/target/*.jar,**/target/*.war'
       //deploy adapters: [tomcat7(credentialsId: 'tomcat-admin', path: '', url: 'http://jm1:8080/')], contextPath: '/multi3-3.9-jgnam', onFailure: false, war: 'multi3/target/*.war'
    }
 }
