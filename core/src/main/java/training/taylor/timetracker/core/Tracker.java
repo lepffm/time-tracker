@@ -27,15 +27,15 @@ public class Tracker {
     }
 
     public TimeEntry get(int index) {
-        boolean valid = false;
-        try {
-            valid = true;
-        } catch (Exception e) {
+        //boolean valid = false;
+        // try {
+        //     valid = true;
+        // } catch (Exception e) {
 
-        }
+        // }
 
         
-        @SuppressWarnings("PMD")
+        //@SuppressWarnings("PMD")
         // if (valid = true) {
         //     // whatever
         // }
